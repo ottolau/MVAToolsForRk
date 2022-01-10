@@ -30,90 +30,91 @@ if args.lepton not in ["Mu","PFe","LowPt"]:
 #Files=["cmgTuple_PFeKEE_MC_correctPU_unbiased_v7.0/BuToKEE_bothE_correctPU_unbiased"] #unbiased
 #Files=["cmgTuple_PFeKJpsiEE_MC_correctPU_unbiased_v7.0/BuToKJpsiEE_bothE_correctPU_unbiased/"]
 #Dir="/eos/cms/store/cmst3/user/gkaratha/"
+
+#Files=["BuToKEE_bothE_correctPU_biased"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_MC_v7.2/"
+#Files=["BuToKEE_bothE_correctPU_unbiased"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_MC_v7.2/"
+#Files=["BuToKJpsiEE_bothE_correctPU_unbiased"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_MC_v7.2/"
+#Files=["BdToKstarJpsiLowPtEE_part2_KstarKPi_PIEE"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_MC_v7.2/"
+#Files=["BdToKstarJpsiLowPtEE_part2_KstarKPi_KEE"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_MC_v7.2/"
+#Files=["BuToKPsi2SEE_bothE_correctPU_unbiased"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_MC_v7.2/"
+#Files=["BdToKstarPsi2S_ToEE_bothE_KstarKPi_KEE"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_MC_v7.2/"
+#Files=["BdToKstarPsi2S_ToEE_bothE_KstarKPi_PIEE"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_MC_v7.2/"
+#Files=["BuToKJpsiEE_bothE_correctPU_unbiased_ottoPrivate"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_MC_v7.2/"
+#Files=["BuToKJpsiEE_bothE_correctPU_unbiased"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_MC_v7.2_L1info/"
+#Files=["BuToKPsi2SEE_bothE_correctPU_unbiased"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_MC_v7.2_L1info/"
+#Files=["BuToKstarPlusJpsiEE_KstarKPi_KEE"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_MC_v7.2/"
+Files=["BuToKEE_bothE_correctPU_unbiased_fixedD0"]
+Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_MC_v7.2/"
+
+
+# non-reg
+#Files=["BuToKJpsiEE_bothE_correctPU_unbiased"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_nonreg_MC_v7.2/"
+#Files=["BuToKPsi2SEE_bothE_correctPU_unbiased"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_nonreg_MC_v7.2/"
+#Files=["BdToKstarJpsiEE_KstarKPi_KEE/"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_nonreg_MC_v7.2/"
+#Files=["BdToKstarJpsiEE_KstarKPi_PIEE/"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_nonreg_MC_v7.2/"
+#Files=["BdToKstarPsi2SEE_KstarKPi_KEE"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_nonreg_MC_v7.2/"
+#Files=["BdToKstarPsi2SEE_KstarKPi_PIEE"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_nonreg_MC_v7.2/"
+#Files=["BuToKstarPlusJpsiEE_KstarKPi_KEE"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_nonreg_MC_v7.2/"
+#Files=["BuToKstarPlusJpsiEE_KstarKPi_PIEE"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_nonreg_MC_v7.2/"
+#Files=["BuToKstarPlusJpsiEE_KstarKPi_PIEE_noInterDecay"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_nonreg_MC_v7.2/"
+#Files=["BdToK10JpsiEE_KstarKPi_KEE"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_nonreg_MC_v7.2/"
+#Files=["BdToK10JpsiEE_KstarKPi_PIEE"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_nonreg_MC_v7.2/"
+
 #---low pt + PF
 #Files=["cmgTuple_LowPtPFKEE_MC_v5.5/BuToKEE_onlyLowpTPF_part2"] #biased only for trainning
 #Files=["cmgTuple_LowPtPFKEE_MC_v5.5/BuToKEE_onlyLowpTPF_part1"] # unbiased reserved for test
 #Files=["cmgTuple_LowPtPFKJpsiEE_MC_v5.5/BuToKJpsi_ToEE_LowpTPF"]
 #Dir="/eos/cms/store/cmst3/group/bpark/gkaratha/"
 
-
-####kstarJpsi bkg for jpsi
-#---PF
-#kstar(k)ee
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_PFeKstarJpsi_MC_KstarKPi_KEE_v7.0"
-#Files=["BdToKstarJpsiEE_part1","BdToKstarJpsiEE_part2"]
-#kstar(pi)ee
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_PFeKstarJpsi_MC_KstarKPi_PiEE_v7.0/"
-#Files=["BdToKstarJpsiEE_part1","BdToKstarJpsiEE_part2"]
-#---low pt pf
-#Files=["BdToKstarJpsiLowPtEE_part1","BdToKstarJpsiLowPtEE_part2"]
-#Dir="/eos/cms/store/cmst3/group/bpark/gkaratha/cmgTuple_LowPtPFeKEE_MC_KstarToKPi_PiEE_v5.6/"
-
-####Kpsi2S 
-#---PF
-#Files=["cmgTuple_PFeKPsi2SEE_MC_v7.0/BuToKPsi2See_bothE/"]
-#Dir="/eos/cms/store/cmst3/user/gkaratha/"
-
-###Kstar psi2S
-#---PF
-#Files=["cmgTuple_PFeKstarPsi2SEE_MC_KstarKPi_KEE_v7.0/BdToKstarPsi2See_bothE"]#kee
-#Files=["cmgTuple_PFeKstarPsi2SEE_MC_KstarKPi_PiEE_v7.0/BdToKstarPsi2See_bothE"]#piee
-#Dir="/eos/cms/store/cmst3/user/gkaratha/"
+#Files=["BuToKEE_bothE_correctPU_biased"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_LowPtPFeKEE_MC_v7.2/"
+#Files=["BuToKEE_bothE_correctPU_unbiased"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_LowPtPFeKEE_MC_v7.2/"
+#Files=["BuToKJpsiEE_bothE_correctPU_unbiased"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_LowPtPFeKEE_MC_v7.2/"
+#Files=["BdToKstarJpsiLowPtEE_part2_KstarKPi_PIEE"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_LowPtPFeKEE_MC_v7.2/"
+#Files=["BdToKstarJpsiLowPtEE_part2_KstarKPi_KEE"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_LowPtPFeKEE_MC_v7.2/"
+#Files=["BuToKPsi2SEE_bothE_correctPU_unbiased"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_LowPtPFeKEE_MC_v7.2/"
+#Files=["BdToKstarPsi2S_ToEE_bothE_KstarKPi_KEE"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_LowPtPFeKEE_MC_v7.2/"
+#Files=["BdToKstarPsi2S_ToEE_bothE_KstarKPi_PIEE"]
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_LowPtPFeKEE_MC_v7.2/"
 
 
+#extra_name="KPsi2S_correctPU_unbiased_v7.2_nonreg"
+#extra_name="KstarJpsi_PIEE_v7.2_nonreg"
+#extra_name="KstarPsi2S_PIEE_v7.2_nonreg"
+#extra_name="KstarPlusJpsi_PIEE_v7.2_nonreg"
+#extra_name="KEE_correctPU_biased_elePt5_v7.2"
+#extra_name="K10Jpsi_PIEE_v7.2_nonreg"
+extra_name="test"
 
-# no regression
-##eeK train
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_PFeKEE_MC_noregression_v5.6/"
-#Files=["BuToKEE_part2"]
-##eeK test
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_PFeKEE_MC_noregression_v5.6/"
-#Files=["BuToKEE_part1"]
-##JpsiK
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_PFeKJpsiEE_MC_noregression_v5.6/"
-#Files=["BuToKJpsiEE_part1","BuToKJpsiEE_part2"]
-##Kstar Kee
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_PFeKEE_MC_KstarToKPi_KEE_noregression_v5.6/"
-#Files=["BdToKstarJpsiEE_part1","BdToKstarJpsiEE_part2"]
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_PFeKEE_MC_KstarToKPi_PiEE_noregression_v5.6/"
-#Files=["BdToKstarJpsiEE_part1","BdToKstarJpsiEE_part2"]
-
-
-#kmumu
-#Files=["BuToKPsi2SMuMu"] #cmgTuple_TagKMuMu_MC_v5.4/BuToKMuMu/  
-##Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_TagKpsi2SMuMu_MC_v5.4/"
-#Files=["BuToKMuMu"] 
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_TagKMuMu_MC_v5.4/"
-#Files=["BuToKJpsiMuMu"]
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_TagKJpsiMuMu_MC_v5.4/"
-#partial
-#Files=["BdToKstarJpsiMuMu_part1","BdToKstarJpsiMuMu_part2"]
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_TagKMuMu_MC_KstarToKPi_KMuMu_v5.6/"
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_TagKMuMu_MC_KstarToKPi_PiMuMu_v5.6/"
-
-##Kmumu
-#rare
-#Files=["BuToKMuMu"]
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_TagKMuMu_MC_v5.7.1/"
-#kjpsi
-#Files=["BuToKJpsiMuMu"]
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_TagKJpsiMuMu_MC_v5.7.1/"
-#Files=["BdToKstarJpsiMuMu_part1","BdToKstarJpsiMuMu_part2"]
-#k*jpsi
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_TagKMuMu_MC_KstarToKPi_KMuMu_v5.7.1/"
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_TagKMuMu_MC_KstarToKPi_PiMuMu_v5.7.1/"
-#pijpsi
-Files=["crab_BuTopiJpsi_piToK_unbiased_SoftQCD"]
-Dir="/eos/cms/store/cmst3/user/gmelachr/pijpsimumu_piToK_SoftQCD_Nofilter_cmgtuples/"
-#kpsi2s
-#Dir="/eos/cms/store/cmst3/user/gkaratha/"
-#Files=["cmgTuple_TagKPsi2SMuMu_MC_biased_v7.0/BuToKPsi2SMuMu_biased/"]
-#k*psi2s (kmumu)
-#Files=["cmgTuple_TagKstarPsi2SMuMu_MC_KMuMu_biased_v7.0/BdToKstarPsi2SMuMu_biased/"]
-#k*psi2s (pimumu)
-#Files=["cmgTuple_TagKstarPsi2SMuMu_MC_PiMuMu_biased_v7.0/BdToKstarPsi2SMuMu_biased/"]
-
-extra_name="pijpsi_mumu"
 MBmin=4.7; MBmax=5.7;
 specificTrigger="HLT_Mu7_IP4"  # options: None (without quotes): not requiring specific path or HLT path
 selectEtaBin=None # options: None (without quotes), BB, BE_EE
@@ -134,8 +135,9 @@ elif args.lepton=="LowPt":
   else: extra_name="KEE_PFeLowPt_"+extra_name
   
 
-Mll_lowQ=3.5 # applied only if mode is training. measurment mode ignores it
-Mll_highQ=3.85 # applied only in highq2train
+Mll_lowQ=2.5 # applied only if mode is training. measurment mode ignores it
+Mll_highQmin=4.0 # applied only in highq2train
+Mll_highQmax=4.87 # applied only in highq2train
 
 writeMeasurment=True #prints measurment in the final root file. Does nothing in the code. Essentially data is used for bkg and testing
 useLowQ=False
@@ -168,7 +170,7 @@ presel_DR={}
 lep1_branches={}
 lep2_branches={}
 trg_cuts={}
-
+ksvip3d_cut = False
 
 if "recoMu" in cols["L1"]:
   output_branch={cols["B"]+"_mll_fullfit":"Mll",cols["B"]+"_fit_mass":"Bmass",\
@@ -232,7 +234,7 @@ else:
                  "sortedlep1_id":"L1id","sortedlep2_id":"L2id",\
                  "sortedlep1_iso":"L1iso","sortedlep2_iso":"L2iso",\
                  "sortedlep1_trk_mass":"L1Trkmass","sortedlep2_trk_mass":"L2Trkmass",\
-                "sortedlep1_iso04_dca":"L1isoDca","sortedlep2_iso04_dca":"L2isoDca",\
+                 "sortedlep1_iso04_dca":"L1isoDca","sortedlep2_iso04_dca":"L2isoDca",\
                  cols["B"]+"_k_svip3d":"Kip3d",\
                  cols["B"]+"_k_svip3d_err":"Kip3dErr",\
                  cols["B"]+"_k_iso04_dca":"KisoDca",\
@@ -240,9 +242,11 @@ else:
                  cols["B"]+"_l1_n_isotrk_dca":"L1Nisotrk",\
                  cols["B"]+"_l2_n_isotrk_dca":"L2Nisotrk",\
                  cols["B"]+"_k_n_isotrk_dca":"KNisotrk",\
-                 cols["K"]+"_DCASig":"KsDca",cols["B"]+"_k_opp_l_mass":"KLmassD0",\
-                 cols["B"]+"_k_mu_d0_mass":"KMumassD0",\
-                 cols["B"]+"_k_mu_jpsi_mass":"KMumassJpsi",\
+                 cols["K"]+"_DCASig":"KsDca",
+                 #cols["B"]+"_k_opp_l_mass":"KLmassD0",\
+                 #cols["B"]+"_k_mu_d0_mass":"KMumassD0",\
+                 #cols["B"]+"_k_mu_jpsi_mass":"KMumassJpsi",\
+                 cols["B"]+"_kl_massKPi":"KLmassD0",\
                  cols["B"]+"_p_assymetry":"Passymetry",\
                  "PV_npvs":"Npv","HLT_Mu9_IP6":"Mu9_IP6"
 }  
@@ -274,11 +278,18 @@ else:
              cols["B"]+"_fit_pt":0.0,cols["B"]+"_l_xy_sig":3.0,\
              cols["K"]+"_pt":0.5,cols["B"]+"_mll_fullfit":1.05,cols["B"]+"_trk_minxy2":0.000001} #mll cut 1.05 for measure file 0 for train
      presel_lep={"sortedlep1_pt":2.0,"sortedlep2_pt":2.0,"sortedlep1_id":-1.5,"sortedlep2_id":-3.0 } #eta automatically added
+     #presel_lep={"sortedlep1_pt":5.0,"sortedlep2_pt":5.0,"sortedlep1_id":-1.5,"sortedlep2_id":-3.0 } #eta automatically added
+
   if args.lepton=="LowPt":
-     presel={cols["B"]+"_svprob":0.001,cols["B"]+"_fit_cos2D":0.0,\
-             cols["B"]+"_fit_pt":3.0,cols["B"]+"_l_xy_sig":0.0,\
-             cols["K"]+"_pt":0.7,cols["B"]+"_mll_fullfit":0.0}
-     presel_lep={"sortedlep1_pt":2.0,"sortedlep2_pt":1.0,"sortedlep1_id":-2.0,"sortedlep2_id":0.0 } #eta automatically added
+     presel={cols["B"]+"_svprob":0.000001,cols["B"]+"_fit_cos2D":0.95,\
+             cols["B"]+"_fit_pt":0.0,cols["B"]+"_fit_k_pt":0.5,\
+             cols["B"]+"_trk_minxy2":0.000001,cols["B"]+"_mll_fullfit":1.05,\
+             }
+     #presel_lep={"sortedlep1_pt":2.0,"sortedlep2_pt":1.0} #eta automatically added
+     presel_lep = {"sortedlep1_pt":2.0,"sortedlep2_pt":1.0,"sortedlep1_id":-2.0,"sortedlep2_id":0.0}
+     #presel_lep = {"sortedlep1_id":-2.0,"sortedlep2_id":0.0}
+
+     ksvip3d_cut = True
   presel_DR={cols["L1"]+"_DR":0.03,cols["L2"]+"_DR":0.03,cols["K"]+"_DR":0.03}
  
 tree = rt.TChain("Events");
@@ -337,7 +348,10 @@ for ev in tree:
   iev+=1 
   if specificTrigger!=None and ord(getattr(ev,specificTrigger))==0:
     continue;
-  
+  # require L1_SingleMu7er1p5
+  #if ord(getattr(ev,"L1_SingleMu7er1p5"))==0:
+  #  continue;
+
   if len (trg_cuts.keys())>0:
      ntrgmu=0
      for lep in ["1","2"]:
@@ -352,6 +366,10 @@ for ev in tree:
         if pt>trg_cuts["pt"] and abs(eta)<trg_cuts["eta"] and abs(sdxy)>trg_cuts["sdxy"] and trg==1:
            ntrgmu+=1
      if ntrgmu==0: continue   
+
+  #if getattr(ev,"genE1_pt") < 10.0 or getattr(ev,"genE2_pt") < 10.0 or abs(getattr(ev,"genE1_eta")) > 2.4 or abs(getattr(ev,"genE2_eta")) > 2.4:
+    #continue
+
   tot+=1
   # reconstruction DR
   skip=False
@@ -359,7 +377,13 @@ for ev in tree:
     if getattr(ev,cut)>presel_DR[cut]: 
       skip=True
       break;
+  if ksvip3d_cut:
+    if abs(getattr(ev, cols["B"]+"_k_svip3d")) > 0.06:
+      skip=True
+
   if skip:  continue
+
+
   #read branches for preselection
   branches={ cut:getattr(ev,cut) for cut in presel.keys() }  
   skip=False
@@ -415,6 +439,11 @@ for ev in tree:
     if pt1<pt2:
       lep1_branches,lep2_branches = lep2_branches, lep1_branches
       
+  #if getattr(ev,"recoB_fit_l1_pt") < getattr(ev,"recoB_fit_l2_pt"):
+  #  print("l1 pT < l2 pT, l1 pt = {}, l2 pt = {}".format(getattr(ev,"recoB_fit_l1_pt"), getattr(ev,"recoB_fit_l2_pt")))
+  #else:
+  #  print("ok, l1 pt = {}, l2 pt = {}".format(getattr(ev,"recoB_fit_l1_pt"), getattr(ev,"recoB_fit_l2_pt")))
+
 
   #naming
   presel_daughter=0;
@@ -441,7 +470,7 @@ for ev in tree:
   if MB<MBmin or MB>MBmax: continue
   Mll=getattr(ev,"{0}_{1}".format(cols["B"],"mll_fullfit"))
   if useLowQ and Mll > Mll_lowQ: continue
-  if useHighQ and Mll<Mll_highQ: continue
+  if (useHighQ and Mll<Mll_highQmin) or (useHighQ and Mll>Mll_highQmax): continue
   MLK_values={}
   if addMlkVariables:
      vlep = rt.TLorentzVector()
@@ -497,5 +526,6 @@ output_tree.Write()
 print "tot ",tot
 tend=time.time()
 print tend-tstart
-output_tree.Write()
+#output_tree.Write()
+output_file.Close()
 

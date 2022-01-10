@@ -5,7 +5,7 @@
 #import time
 from os import listdir,walk
 from os.path import isfile, join, getsize
-import uproot as upr
+import uproot3 as upr
 import numpy as np
 import awkward
 import argparse
@@ -27,16 +27,18 @@ args=parser.parse_args()
 #Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_PFeKEE_12B_v5.4/addedChunks/"
 ##new
 #Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_PFeKEE_12B_v7.0/addedChunks/"
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_12B_v7.2/addedChunks/"
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_samesign_12B_v7.2/addedChunks/"
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_nonreg_12B_v7.2/addedChunks/"
 
 #lowpT - PF
 #Dir="/eos/cms/store/cmst3/group/bpark/gkaratha/cmgTuple_LowPtPFeKEE_12B_v5.5//addedChunks/"
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_LowPtPFeKEE_12B_v7.2_presel/addedChunks/"
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_LowPtPFeKEE_samesign_12B_v7.2_presel/addedChunks/"
 
-#same sign
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_PFeKEE_SameSign_12B_v5.5/addedChunks/"
-##new
-Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_PFeKEE_12B_samesign_v7.0/addedChunks/"
-#kmumu - tag
-#Dir="/eos/cms/store/cmst3/user/gkaratha/cmgTuple_TagKMuMu_11B_v5.4/addedChunks/"
+#MC
+Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_PFeKEE_MC_v7.2/BuToKEE_bothE_correctPU_unbiased_noGenMatch/"
+#Dir="/eos/cms/store/group/phys_bphys/klau/cmgTuple_LowPtPFeKEE_MC_v7.2/BuToKEE_bothE_correctPU_unbiased_noGenMatch/"
 
 Files=[ (Dir+"/"+filename,getsize(Dir+"/"+filename) ) for filename in listdir(Dir) if isfile(Dir+"/"+filename)]
 
@@ -45,7 +47,10 @@ if len(Files)==0:
 
 Files.sort(key=lambda l: l[1],reverse=True)
 
-extra_name="_kee_PF_12B_presel5_samesign"
+#extra_name="_kee_LowPtPF_samesign_12B_v7.2"
+#extra_name="_kee_PF_nonreg_12B_v7.2"
+#extra_name="_kee_PF_12B_elePt5_v7.2"
+extra_name="_kee_PF_BuToKEE_correctPU_unbiased_v7.2"
 nparts=args.nparts
 runpart=args.part
 sortby="leppt" #options: leppt, eltype. sort leptons by pt or electron type
@@ -57,7 +62,8 @@ etaBin="None" #options: BB, BE_EE, None
 useLowQ=False
 useHighQ=False
 Mllcut=2.5 #low q2 boundary
-Highq2Mllcut=3.85
+Highq2Mllcutmin=4.0
+Highq2Mllcutmax=4.87
 useBsideBands=False
 col="SkimBToKEE"
 MLeftSideMin=4.91
@@ -66,7 +72,7 @@ MRightSideMin=5.49
 MRightSideMax=5.65
 MBmin=4.7; MBmax=5.7;
 #specificPath="None" #if "None" not fire requirment on a specific path. Every evt saved. If path is given, it requires to fire
-
+ksvip3d_cut = False
 
 if args.mode=="train":
   writeMeasurment=False
@@ -138,7 +144,8 @@ else:
                  col+"_k_mu_d0_mass":"KMumassD0",\
                  col+"_k_mu_jpsi_mass":"KMumassJpsi",\
                  col+"_p_assymetry":"Passymetry",\
-                 "PV_npvs":"Npv","HLT_Mu9_IP6":"Mu9_IP6"
+                 "PV_npvs":"Npv","HLT_Mu9_IP6":"Mu9_IP6",
+                 "HLT_Mu7_IP4":"Mu7_IP4",
                  }   
   leppairs_branch={col+"_fit_l1_pt":col+"_fit_l2_pt",\
                    col+"_fit_l1_eta":col+"_fit_l2_eta",\
@@ -147,16 +154,32 @@ else:
                    col+"_l1_trk_mass":col+"_l2_trk_mass"
                    } 
   branchId_change = (col+"_l1LowPtId",col+"_l2LowPtId")#name to switch
-  presel={col+"_svprob":0.000001, col+"_fit_cos2D":0.85, col+"_fit_pt":0.0,\
-          col+"_l_xy_sig":3.0, col+"_fit_k_pt":0.5, col+"_mll_fullfit":1.05,\
-          col+"_trk_minxy2":0.000001
-          } #not needed(generally); applied in cmg directly but of course the option works
-    #tree_kee.Draw("Bmass>>hkee","1./8.*(Bmass>4.7 && Bmass<5.7 && Mll>1.05 && Mll<2.45)")
-  leppairs_presel = {col+"_fit_l1_pt":2.0,col+"_fit_l2_pt":2.0,col+"_l1PFId":-1.5, col+"_l2PFId":-3.0}
-#lxy_sig>0 always B with 0 unc (so inf) go to -99
-  scalars_branch=["PV_npvs","HLT_Mu9_IP6"]
 
-trees = upr.tree.iterate(runFiles,"Events",namedecode="utf-8")
+  lepton = "PFe"
+  if lepton=="PFe":
+    presel={col+"_svprob":0.000001, col+"_fit_cos2D":0.85, col+"_fit_pt":0.0,\
+            col+"_l_xy_sig":3.0, col+"_fit_k_pt":0.5, col+"_mll_fullfit":1.05,\
+            col+"_trk_minxy2":0.000001
+            } #not needed(generally); applied in cmg directly but of course the option works
+    leppairs_presel = {col+"_fit_l1_pt":2.0,col+"_fit_l2_pt":2.0,col+"_l1PFId":-1.5, col+"_l2PFId":-3.0}
+    #leppairs_presel = {col+"_fit_l1_pt":5.0,col+"_fit_l2_pt":5.0,col+"_l1PFId":-1.5, col+"_l2PFId":-3.0}
+
+  if lepton=="LowPt":
+    presel={col+"_svprob":0.000001, col+"_fit_cos2D":0.95, col+"_fit_pt":0.0,\
+            col+"_fit_k_pt":0.5, col+"_mll_fullfit":1.05,\
+            col+"_trk_minxy2":0.000001
+            } #not needed(generally); applied in cmg directly but of course the option works
+    leppairs_presel = {col+"_fit_l1_pt":2.0,col+"_fit_l2_pt":1.0} # as well as pf id > -2 and lowpt id > 0
+    ksvip3d_cut = True
+
+#lxy_sig>0 always B with 0 unc (so inf) go to -99
+  scalars_branch=["PV_npvs","HLT_Mu9_IP6","HLT_Mu7_IP4"]
+
+
+input_branches = list(set(list(output_branch.keys()) + list(leppairs_branch.keys()) + list(presel.keys()) + list(leppairs_presel.keys()) + scalars_branch + list(branchId_change)))
+input_branches += ['nSkimBToKEE', col+"_l1isPF", col+"_l2isPF"]
+print(input_branches)
+trees = upr.tree.iterate(runFiles,"Events",branches=input_branches,namedecode="utf-8",entrysteps=100000)
 
 iprint=0
 tree_values={}
@@ -210,7 +233,7 @@ for tree in trees:
 
   print(len(outl1_inl1_mask),len(outl1_inl2_mask))
   print(len(outl2_inl1_mask),len(outl2_inl2_mask))
-  print("starting",iprint,"file",runFiles[iprint])
+  print("starting",iprint)
   iprint+=1
 
   presel_mask= np.full( len(copied_branches[col+"_fit_mass"]), True) 
@@ -228,13 +251,16 @@ for tree in trees:
   if useLowQ:
     presel_mask = presel_mask * (copied_branches[col+"_mll_fullfit"]<Mllcut )
   if useHighQ:
-    presel_mask = presel_mask * (copied_branches[col+"_mll_fullfit"]>Highq2Mllcut )
+    presel_mask = presel_mask * (copied_branches[col+"_mll_fullfit"]>Highq2Mllcutmin ) * (copied_branches[col+"_mll_fullfit"]<Highq2Mllcutmax )
 
 
   #eta cuts e1,e2
   presel_mask = presel_mask * ( (copied_branches[col+"_fit_l2_eta"]<2.4)* (copied_branches[col+"_fit_l2_eta"]>-2.4) * (copied_branches[col+"_fit_l1_eta"]<2.4)* (copied_branches[col+"_fit_l1_eta"]>-2.4) )
   #adding eta cut in K
   presel_mask = presel_mask * ( (copied_branches[col+"_fit_k_eta"]<2.4)* (copied_branches[col+"_fit_k_eta"]>-2.4) ) 
+  # adding k_svip3d cut
+  if ksvip3d_cut:
+    presel_mask = presel_mask * ( abs(copied_branches[col+"_k_svip3d"])<0.06)
 
   if debug:
     for isave,save in enumerate(presel_mask):

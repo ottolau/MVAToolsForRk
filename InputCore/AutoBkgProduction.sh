@@ -4,7 +4,9 @@ Nparts=8
 Path=.
 #. for current dir
 
-for j in train;
+for j in train measure;
+#for j in measure;
+#for j in highq2train;
 do
   for ((i=1; i<=${Nparts}; i++));
   do 
@@ -13,7 +15,7 @@ do
 #      python DataPrepUproot4_drlk_patch.py -n ${i} -m ${j} --nparts ${Nparts} --outpath ${Path} &
  #   fi
     
-    python DataPrepUproot4.py -n ${i} -m ${j} --nparts ${Nparts} --outpath ${Path} &
+    python3 DataPrepUproot4.py -n ${i} -m ${j} --nparts ${Nparts} --outpath ${Path} &
 #    python InputPreparation2xval.py -n ${i} -m ${j} --nparts ${Nparts} &
     #python InputPreparation2forOnlyOneBDT.py -n ${i} --nparts 8   & 
     wait   
